@@ -1,0 +1,64 @@
+//License Information:
+//BSD 3-Clause License
+
+//Copyright (c) 2024, Thanish C
+
+//Redistribution and use in source and binary forms, with or without
+//modification, are permitted provided that the following conditions are met:
+
+//1. Redistributions of source code must retain the above copyright notice, this
+//   list of conditions and the following disclaimer.
+
+//2. Redistributions in binary form must reproduce the above copyright notice,
+//   this list of conditions and the following disclaimer in the documentation
+//   and/or other materials provided with the distribution.
+
+//3. Neither the name of the copyright holder nor the names of its
+//   contributors may be used to endorse or promote products derived from
+//   this software without specific prior written permission.
+
+//THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+//AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+//IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+//FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+//DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+//SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+//CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+//OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+//OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+//@version=5
+//Pinescript by @heytanix
+
+indicator("Current Trend", shorttitle="CurTrend", overlay=true) //Defines the indicator name, short name and the overlay
+
+// Input: Length
+length = input(55, title="Length") //Defines the lenght input also titled as Length
+
+// Calculate Hull Moving Average (HMA)
+hma(src, length) =>
+    wmaf = ta.wma(src, length / 2)
+    res = ta.wma(2 * wmaf - ta.wma(src, length), math.round(math.sqrt(length)))
+    res
+
+// Calculate HMA for closing price
+hmaClose = hma(close, length)
+
+// Determine the trend
+trendUp = hmaClose > hmaClose[1]
+trendDown = hmaClose < hmaClose[1]
+
+// Plot HMA with trend colors
+plot_color = trendUp ? color.new(color.blue, 0) : trendDown ? color.new(color.red, 0) : color.new(color.gray, 0) //Defines the color for the plotting
+plot(hmaClose, color=plot_color, linewidth=2)
+
+// Add a small yellow zone when the color changes
+bgcolor(plot_color != plot_color[1] ? color.new(#00ffb7, 90) : na, offset = 0) //Defines the background color for the trend change zone
+
+// Display the Length on the chart
+//label.new(bar_index, na, "Length: " + str.tostring(length), color=color.gray, textcolor=color.white, style=label.style_label_left, size=size.small) 
+
+// Alert conditions (customize as needed)
+alertcondition(trendUp, title="HMA Uptrend", message="HMA is in an uptrend!")
+alertcondition(trendDown, title="HMA Downtrend", message="HMA is in a downtrend!")
