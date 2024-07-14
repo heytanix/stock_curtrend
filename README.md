@@ -50,4 +50,4 @@ How to Use:
 
 
 Warning:
-1. This script is intended to analyze market trends and does not guarantee 100% accuracy with any stock. By using this script, you accept full responsibility for any decisions made based on its indications.
+> This script is intended to analyze market trends and does not guarantee 100% accuracy with any stock. By using this script, you accept full responsibility for any decisions made based on its indications.
