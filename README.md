@@ -1,4 +1,4 @@
-# Current Trend (CurTrend)
+# CurTrend (Current Trend)
 As the name suggests, this is a simple script designed to analyze market trends.
 
 
