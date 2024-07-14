@@ -41,13 +41,13 @@ Pinescript by @heytanix
 
 
 How to Use:
-> (Made for TradingView Platform as a Pine Script)
-> Once you apply this indicator, a curve and green zones will appear over the graph.
-> The red part of the curve indicates a downtrend, signaling that the stock price is likely to decrease.
-> The blue part of the curve indicates an uptrend, signaling that the stock price is likely to increase.
-> The Green zone appears where the trend is most likely to change.
+1. (Made for TradingView Platform as a Pine Script)
+2. Once you apply this indicator, a curve and green zones will appear over the graph.
+3. The red part of the curve indicates a downtrend, signaling that the stock price is likely to decrease.
+4. The blue part of the curve indicates an uptrend, signaling that the stock price is likely to increase.
+5. The Green zone appears where the trend is most likely to change.
 
 
 
 Warning:
-> This script is intended to analyze market trends and does not guarantee 100% accuracy with any stock. By using this script, you accept full responsibility for any decisions made based on its indications.
+1. This script is intended to analyze market trends and does not guarantee 100% accuracy with any stock. By using this script, you accept full responsibility for any decisions made based on its indications.
