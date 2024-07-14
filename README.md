@@ -1,4 +1,4 @@
-# stock_curtrend
+Current Trend (CurTrend)
 As the name suggests, this is a simple script designed to analyze market trends.
 
 
