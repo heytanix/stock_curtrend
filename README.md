@@ -1,6 +1,6 @@
 # stock_curtrend
 As the name suggests, this is a simple script designed to analyze market trends.
-============================================================================================================================
+<============================================================================================================================>
 License Information:
 BSD 3-Clause License
 
@@ -30,16 +30,16 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-============================================================================================================================
+<============================================================================================================================>
 @version=5
 Pinescript by @heytanix
-============================================================================================================================
+<============================================================================================================================>
 How to Use:
 > (Made for TradingView Platform as a Pine Script)
 > Once you apply this indicator, a curve and green zones will appear over the graph.
 > The red part of the curve indicates a downtrend, signaling that the stock price is likely to decrease.
 > The blue part of the curve indicates an uptrend, signaling that the stock price is likely to increase.
 > The Green zone appears where the trend is most likely to change.
-============================================================================================================================
+<============================================================================================================================>
 Warning:
 > This script is intended to analyze market trends and does not guarantee 100% accuracy with any stock. By using this script, you accept full responsibility for any decisions made based on its indications.
